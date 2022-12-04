@@ -12,6 +12,7 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
+//go:generate mockery --name=BL  mocks/bl.mock.go
 type BL interface {
 	Login(ctx context.Context, loginRequest spec.LoginRequest) (spec.AuthUserResponse, error)
 }

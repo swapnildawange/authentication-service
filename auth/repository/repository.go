@@ -10,6 +10,7 @@ import (
 	"github.com/jmoiron/sqlx"
 )
 
+//go:generate mockery --name=Repository  -output=../mocks
 type Repository interface {
 	GetUserFromAuth(ctx context.Context, email string) (spec.AuthUserResponse, error)
 	GetUser(ctx context.Context, userId int) (spec.User, error)
